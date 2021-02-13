@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Logout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2 *ngIf="auth.user | async as user">Olá {{user.displayName}}</h2>
+  <p class="ion-text-justify">Clique no botão abaixo para confirmar a saída</p>
+  <p>&nbsp;</p>
+  <ion-button (click)="logout()" expand="block"> Sair do Aplicativo</ion-button>
+
+  
+</ion-content>
