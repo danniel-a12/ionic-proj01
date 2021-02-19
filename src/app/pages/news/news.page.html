@@ -10,24 +10,19 @@
 
 <ion-content class="ion-padding" *ngIf="newsList">
 
-  <h2>Notícias</h2>
+  <div *ngFor="let item of newsList" class="newsItem">
 
-  <div *ngFor="let item of newList" class="newsItem">
-  
     <ion-card class="ion-no-margin ion-margin-bottom" (click)="readNews(item.url)">
 
       <img *ngIf="item.urlToImage" src="{{ item.urlToImage }}" alt="Imagem indisponível" title="{{ item.title }}">
-      
       <ion-card-header>
-
         <ion-card-subtitle>{{ item.source.name }}</ion-card-subtitle>
-        <ion-card-title> {{item.title}} </ion-card-title>
+        <ion-card-title>{{ item.title }}</ion-card-title>
       </ion-card-header>
-      
       <ion-card-content *ngIf="item.description === ''">{{ item.content }}</ion-card-content>
       <ion-card-content *ngIf="item.description !== ''">{{ item.description }}</ion-card-content>
 
     </ion-card>
-    
+
   </div>
 </ion-content>

@@ -38,4 +38,9 @@ export class NewsPage implements OnInit {
 
   }
 
+  readNews(link: any) {
+    window.open(link);
+    return false;
+  }
 }
+
