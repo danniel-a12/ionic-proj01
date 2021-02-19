@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">megacurioso</string>
+    <string name="title_activity_main">megacurioso</string>
+    <string name="package_name">megacurioso.com.github.danniela12</string>
+    <string name="custom_url_scheme">megacurioso.com.github.danniela12</string>
+</resources>

@@ -25,7 +25,7 @@ export class NewsPage implements OnInit {
   ngOnInit() {
 
     this.http.get(this.apiURL).subscribe(
-      (data) =>{
+      (data: any) =>{
 
         this.newList = data.articles.slice(0, this.apiItens);
         console.log(this.newList);
