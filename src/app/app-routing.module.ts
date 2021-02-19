@@ -19,59 +19,59 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'news',
-    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
+    loadChildren: () => import('./pages/news/news.module').then(m => m.NewsPageModule)
   },
   {
     path: 'contacts',
-    loadChildren: () => import('./pages/contacts/contacts.module').then( m => m.ContactsPageModule)
+    loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsPageModule)
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule)
   },
 
   // 2) Se uma rota não existe, exibe 'Erro 404'
 
-    {
+  {
     path: 'view/:id',
-    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule),
-    
+    loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule),
+
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
 
 
-    },
+  },
 
-    {
-      path: 'login',
-      loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-      canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogged }
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogged }
 
 
-     
 
-    },
-    {
-      path: 'logout',
-      loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule),
-      canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
-    },
-    {
-      path: 'profile',
-      loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule),
 
-      canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then(m => m.LogoutPageModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
 
-    },
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
 
-    {
-      path: '**',
-      loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
-    }
- 
+  },
+
+  {
+    path: '**',
+    loadChildren: () => import('./pages/e404/e404.module').then(m => m.E404PageModule)
+  }
+
 
 
 ];
@@ -82,4 +82,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
