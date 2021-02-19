@@ -40,6 +40,24 @@ export class ContactsPage implements OnInit {
 
     // 4. Cria o formulário de contatos
     this.contactFormCreate();
+
+    if(this.contactForm){
+      this.auth.onAuthStateChanged(
+        (userData) => {
+          if(userData){
+
+            this.contactForm.controls.name.setValue(userData.displayName.trim());
+            this.contactForm.controls.email.setValue(userData.email.trim());
+
+          }
+
+        }
+
+      );
+
+    }
+
+
   }
 
   // 5. Cria o formulário de contatos
@@ -87,7 +105,7 @@ export class ContactsPage implements OnInit {
 
     // Formata data
     this.contactForm.controls.date.setValue(
-      this.pipe.transform(Date.now(), 'yyyy-MM-dd hh:mm:ss').trim()
+      this.pipe.transform(Date.now(), 'yyyy-MM-dd HH:mm:ss').trim()
     );
 
     // Salva documento no Firaestore
